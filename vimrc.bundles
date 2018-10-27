@@ -15,27 +15,32 @@ let g:has_async = v:version >= 800 || has('nvim')
 call plug#begin('~/.vim/bundle')
 
 " Define bundles via Github repos
-Plug 'christoomey/vim-run-interactive'
+" General
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'elixir-lang/vim-elixir'
-Plug 'fatih/vim-go'
 Plug 'janko-m/vim-test'
-Plug 'kchmck/vim-coffee-script'
-Plug 'pangloss/vim-javascript'
 Plug 'pbrisbin/vim-mkdir'
-Plug 'slim-template/vim-slim'
-Plug 'tpope/vim-bundler'
-Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-projectionist'
-Plug 'tpope/vim-rails'
-Plug 'tpope/vim-rake'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
-Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/tComment'
+Plug 'mattn/emmet-vim'
+Plug 'scrooloose/nerdcommenter'
+Plug 'Shougo/deoplete.nvim'
+Plug 'ervandew/supertab'
+" Theming
+Plug 'altercation/vim-colors-solarized'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+" PHP
+Plug 'StanAngeloff/php.vim'
+Plug 'shawncplus/phpcomplete.vim'
+Plug 'arnaud-lb/vim-php-namespace'
+Plug 'joonty/vdebug'
+" JS
+Plug 'pangloss/vim-javascript'
+Plug 'posva/vim-vue'
+Plug 'marijnh/tern_for_vim'
 
 if g:has_async
   Plug 'w0rp/ale'

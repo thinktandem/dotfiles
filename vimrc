@@ -1,6 +1,93 @@
 " Leader
 let mapleader = " "
 
+""" Visuals """
+colorscheme solarized
+set background=dark
+set nonumber
+set foldcolumn=2
+hi FoldColumn ctermbg=None
+hi vertsplit ctermbg=bg ctermbg=bg
+set t_CO=256
+
+" No scrollbars
+set guioptions-=l
+set guioptions-=L
+set guioptions-=r
+set guioptions-=R
+
+""" Airline Setup
+let g:airline_powerline_fonts = 1
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_symbols.space = "\ua0"
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_buffers = 0
+let g:airline_theme = 'solarized'
+
+""" Deoplete
+let g:neocomplete#enable_at_startup = 1
+
+"-------------Mappings-------------"
+" Make it easy to edit local .vimrc file.
+nmap <Leader>ev :tabedit ~/.vimrc.local<cr>
+nmap <Leader>ep :tabedit ~/.vimrc.bundles.local<cr>
+nmap <Leader>es :edit ~/.vim/snippets
+" Get rid of search hilight.
+nmap <Leader><space> :nohlsearch<cr>
+
+" Browse Tags.
+nmap <C-R> :CtrlPBufTag<cr>
+nmap <Leader>f :tag<space>
+
+"-------------Laravel Specific--------"
+nmap <Leader>lr :e routes/web.php<cr>
+nmap <Leader>lm :! php artisan make:
+
+
+"-------------Auto-Commands--------"
+" Autoreload config file on save.
+augroup autosourcing
+	autocmd!
+	autocmd BufWritePost ~/.vimrc.local source %
+augroup END
+
+"-----------PHP General settings --"
+function! IPhpInsertUse()
+    call PhpInsertUse()
+    call feedkeys('a',  'n')
+endfunction
+autocmd FileType php inoremap <Leader>u <Esc>:call IPhpInsertUse()<CR>
+autocmd FileType php noremap <Leader>u :call PhpInsertUse()<CR>
+
+" Ale Linting
+g:ale_php_phpcs_standard="PSR2"
+g:ale_php_phpcbf_standard="PSR2"
+
+augroup php
+	autocmd BufRead,BufNewFile *.php set tabstop=4
+augroup END
+autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+
+" Drupal *.module and *.install files.
+augroup module
+	autocmd BufRead,BufNewFile *.module set filetype=php
+	autocmd BufRead,BufNewFile *.install set filetype=php
+	autocmd BufRead,BufNewFile *.test set filetype=php
+	autocmd BufRead,BufNewFile *.inc set filetype=php
+	autocmd BufRead,BufNewFile *.profile set filetype=php
+	autocmd BufRead,BufNewFile *.view set filetype=php
+augroup END
+
+"-------------Emmet------------------"
+let g:user_emmet_mode='a'
+
+
+"
+" Here begins the original Thoughtbot dotfiles
+"
+
 set backspace=2   " Backspace deletes like most programs in insert mode
 set nobackup
 set nowritebackup

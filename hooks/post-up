@@ -2,13 +2,17 @@
 
 touch "$HOME"/.psqlrc.local
 
-if [ -e "$HOME"/.vim/autoload/plug.vim ]; then
-  vim -E -s +PlugUpgrade +qa
+mkdir -p "$HOME"/.config/nvim
+
+ln -s "$HOME"/.vimrc "$HOME"/.config/nvim/init.vim
+
+if [ -e "$HOME"/.local/share/nvim/site/autoload/plug.vim ]; then
+  nvim -E -s +PlugUpgrade +qa
 else
-  curl -fLo "$HOME"/.vim/autoload/plug.vim --create-dirs \
-      https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim 
 fi
-vim -u "$HOME"/.vimrc.bundles +PlugUpdate +PlugClean! +qa
+nvim -u "$HOME"/.vimrc.bundles +PlugUpdate +PlugClean! +qa
 
 reset -Q
 

@@ -263,4 +263,5 @@ augroup END
 "-------------Emmet------------------"
 let g:user_emmet_mode='a'
 
-
+set exrc
+set secure

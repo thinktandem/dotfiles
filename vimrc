@@ -56,11 +56,6 @@ augroup ale
 
   if g:has_async
     set updatetime=1000
-    " let g:ale_lint_on_text_changed = 0
-    " autocmd CursorHold * call ale#Lint()
-    " autocmd CursorHoldI * call ale#Lint()
-    " autocmd InsertEnter * call ale#Lint()
-    " autocmd InsertLeave * call ale#Lint()
   else
     echoerr "The thoughtbot dotfiles require NeoVim or Vim 8"
   endif
@@ -206,9 +201,6 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_buffers = 0
 let g:airline_theme = 'solarized'
 
-""" Deoplete
-let g:neocomplete#enable_at_startup = 1
-
 "-------------Mappings-------------"
 " Make it easy to edit local .vimrc file.
 nmap <Leader>ev :tabedit ~/.vimrc.local<cr>
@@ -247,6 +239,7 @@ let g:ale_php_phpcbf_standard="PSR2"
 let g:ale_javascript_eslint_suppress_eslintignore=1
 let g:ale_javascript_eslint_suppress_missing_config=1
 let g:ale_fix_on_save=1
+
 augroup php
 	autocmd BufRead,BufNewFile *.php set tabstop=4
 augroup END
@@ -273,3 +266,7 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 " Deoplete "
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#sources#ternjs#docs = 1
+
+" Supertab "
+let g:SuperTabDefaultCompletionType = "<C-n>"
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"

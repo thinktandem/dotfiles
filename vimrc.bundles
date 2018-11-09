@@ -28,6 +28,9 @@ Plug 'mattn/emmet-vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'Shougo/deoplete.nvim'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'jiangmiao/auto-pairs'
+Plug 'ervandew/supertab'
+
 " Theming
 Plug 'altercation/vim-colors-solarized'
 Plug 'vim-airline/vim-airline'

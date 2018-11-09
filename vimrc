@@ -244,7 +244,9 @@ autocmd FileType php noremap <Leader>u :call PhpInsertUse()<CR>
 " Ale Linting
 let g:ale_php_phpcs_standard="PSR2"
 let g:ale_php_phpcbf_standard="PSR2"
-
+let g:ale_javascript_eslint_suppress_eslintignore=1
+let g:ale_javascript_eslint_suppress_missing_config=1
+let g:ale_fix_on_save=1
 augroup php
 	autocmd BufRead,BufNewFile *.php set tabstop=4
 augroup END
@@ -265,3 +267,9 @@ let g:user_emmet_mode='a'
 
 set exrc
 set secure
+" Editorconfig "
+let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
+
+" Deoplete "
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#sources#ternjs#docs = 1

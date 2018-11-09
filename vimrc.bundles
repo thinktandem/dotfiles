@@ -27,6 +27,7 @@ Plug 'vim-scripts/tComment'
 Plug 'mattn/emmet-vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'Shougo/deoplete.nvim'
+Plug 'editorconfig/editorconfig-vim'
 " Theming
 Plug 'altercation/vim-colors-solarized'
 Plug 'vim-airline/vim-airline'
@@ -36,10 +37,12 @@ Plug 'StanAngeloff/php.vim'
 Plug 'shawncplus/phpcomplete.vim'
 Plug 'arnaud-lb/vim-php-namespace'
 Plug 'joonty/vdebug'
+" Drupal
+Plug 'https://git.drupal.org/project/vimrc.git', { 'branch': '8.x-1.x', 'rtp': 'bundle/vim-plugin-for-drupal' }
 " JS
 Plug 'pangloss/vim-javascript'
 Plug 'posva/vim-vue'
-Plug 'marijnh/tern_for_vim'
+Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 
 if g:has_async
   Plug 'w0rp/ale'

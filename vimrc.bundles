@@ -30,7 +30,8 @@ Plug 'Shougo/deoplete.nvim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'ervandew/supertab'
-
+Plug 'xolox/vim-easytags'
+Plug 'xolox/vim-misc' " required by easytags
 " Theming
 Plug 'altercation/vim-colors-solarized'
 Plug 'vim-airline/vim-airline'

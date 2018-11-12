@@ -255,6 +255,10 @@ augroup module
 	autocmd BufRead,BufNewFile *.view set filetype=php
 augroup END
 
+"-------------Javascript-------------"
+let g:vue_disable_pre_processors = 1
+autocmd FileType vue syntax sync fromstart
+
 "-------------Emmet------------------"
 let g:user_emmet_mode='a'
 

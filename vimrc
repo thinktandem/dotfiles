@@ -239,6 +239,11 @@ let g:ale_php_phpcbf_standard="PSR2"
 let g:ale_javascript_eslint_suppress_eslintignore=1
 let g:ale_javascript_eslint_suppress_missing_config=1
 let g:ale_fix_on_save=1
+let g:ale_fixers = {
+      \   'javascript': [
+      \       'eslint',
+      \   ],
+      \}
 
 augroup php
 	autocmd BufRead,BufNewFile *.php set tabstop=4
@@ -255,6 +260,11 @@ augroup module
 	autocmd BufRead,BufNewFile *.view set filetype=php
 augroup END
 
+augroup filetypedetect
+  " Use :execute in order to use the drupaldetect#php_ext variable.
+  execute 'autocmd BufRead,BufNewFile *.{' . drupaldetect#php_ext . '}'
+        \ 'if drupaldetect#Check() | let  g:ale_php_phpcs_standard="drupal" | endif'
+augroup END
 "-------------Javascript-------------"
 let g:vue_disable_pre_processors = 1
 autocmd FileType vue syntax sync fromstart

@@ -243,6 +243,9 @@ let g:ale_fixers = {
       \   'javascript': [
       \       'eslint',
       \   ],
+      \   'vue': [
+      \       'eslint',
+      \   ],
       \}
 
 augroup php
@@ -268,6 +271,13 @@ augroup END
 "-------------Javascript-------------"
 let g:vue_disable_pre_processors = 1
 autocmd FileType vue syntax sync fromstart
+let g:deoplete#sources#ternjs#case_insensitive = 1
+let g:deoplete#sources#ternjs#include_keywords = 1
+let g:deoplete#sources#ternjs#filetypes = [
+                \ 'jsx',
+                \ 'javascript.jsx',
+                \ 'vue',
+                \ ]
 
 "-------------Emmet------------------"
 let g:user_emmet_mode='a'

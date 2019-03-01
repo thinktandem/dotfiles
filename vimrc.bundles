@@ -26,6 +26,10 @@ Plug 'tpope/vim-surround'
 Plug 'vim-scripts/tComment'
 Plug 'mattn/emmet-vim'
 Plug 'scrooloose/nerdcommenter'
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
 Plug 'Shougo/deoplete.nvim'
 Plug 'Shougo/neco-syntax'
 Plug 'editorconfig/editorconfig-vim'
@@ -34,6 +38,7 @@ Plug 'ervandew/supertab'
 Plug 'xolox/vim-easytags'
 Plug 'xolox/vim-misc' " required by easytags
 Plug 'airblade/vim-gitgutter'
+Plug 'edkolev/tmuxline.vim'
 
 " Theming
 Plug 'altercation/vim-colors-solarized'
@@ -49,7 +54,6 @@ Plug 'https://git.drupal.org/project/vimrc.git', { 'branch': '8.x-1.x', 'rtp': '
 " JS
 Plug 'pangloss/vim-javascript'
 Plug 'posva/vim-vue'
-Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 
 if g:has_async
   Plug 'w0rp/ale'

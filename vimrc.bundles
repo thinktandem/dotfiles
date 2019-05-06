@@ -52,6 +52,7 @@ Plug 'phpactor/phpactor' ,  {'do': 'composer install', 'for': 'php'}
 Plug 'kristijanhusak/deoplete-phpactor'
 Plug 'arnaud-lb/vim-php-namespace'
 Plug 'joonty/vdebug'
+Plug 'nelsyeung/twig.vim'
 " Drupal
 Plug 'https://git.drupal.org/project/vimrc.git', { 'branch': '8.x-1.x', 'rtp': 'bundle/vim-plugin-for-drupal' }
 " JS

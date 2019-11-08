@@ -163,10 +163,6 @@ set complete+=kspell
 " Always use vertical diffs
 set diffopt+=vertical
 
-" Local config
-if filereadable($HOME . "/.vimrc.local")
-  source ~/.vimrc.local
-endif
 
 
 """""""""""""""""""""""""""""""""
@@ -294,3 +290,8 @@ let g:deoplete#sources#ternjs#docs = 1
 " Supertab "
 let g:SuperTabDefaultCompletionType = "<C-n>"
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+
+" Local config
+if filereadable($HOME . "/.vimrc.local")
+  source ~/.vimrc.local
+endif

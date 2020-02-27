@@ -26,6 +26,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-dispatch'
 Plug 'radenling/vim-dispatch-neovim'
 Plug 'vim-scripts/tComment'
+Plug 'vim-scripts/DoxygenToolkit.vim'
 Plug 'mattn/emmet-vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'autozimu/LanguageClient-neovim', {
@@ -53,6 +54,7 @@ Plug 'kristijanhusak/deoplete-phpactor'
 Plug 'arnaud-lb/vim-php-namespace'
 Plug 'joonty/vdebug'
 Plug 'nelsyeung/twig.vim'
+Plug 'jwalton512/vim-blade'
 " Drupal
 Plug 'https://git.drupal.org/project/vimrc.git', { 'branch': '8.x-1.x', 'rtp': 'bundle/vim-plugin-for-drupal' }
 " JS
